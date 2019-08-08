@@ -40,8 +40,6 @@ class MainActivity : AppCompatActivity() {
         btnNaturalReading.setOnClickListener {  doIt("Natural Reading"){naturalReading()} }
     }
 
-
-
 /////////////////////////////////   general utility functions ////////////////////////////////////////////////////
 
     private fun doIt(oprName: String, result:()->String) { if (inputOK()) showResultDialog(input,oprName,result) }
@@ -87,7 +85,6 @@ class MainActivity : AppCompatActivity() {
     private fun getHexa() = input.toLong().toString(16)
 
 /////////////////////////////////   manipulations / calculations  functions  /////////////////////////////////////
-
 
     private fun getReversedDigits(): String {
         var tmp = input.toLong()
@@ -142,8 +139,7 @@ class MainActivity : AppCompatActivity() {
         return "\n${capitalizeFirstLetter(totalNumText)}"
     }
 
-    private fun genFullNumText(basicArr:Array<String>):String
-    {
+    private fun genFullNumText(basicArr:Array<String>):String {
         var resultTxt =""
         for(arrCounter in basicArr.size-1 downTo 0)
         {
@@ -264,7 +260,6 @@ class MainActivity : AppCompatActivity() {
         val len = n.toString().length
         return if(len==0) 0 else ((len-1)/3)+1
     }
-
 
     //////////////////////////////////////////////////////////////////////
     //////// [digit by digit reading] functions section //////////////////
