@@ -26,32 +26,14 @@ class MainActivity : AppCompatActivity() {
         btnInfo.setOnClickListener { showInfoDialog() }
 
         // base conversions //
-        btnBinary.setOnClickListener {
-            if(!inputOK()) return@setOnClickListener
-            showResultDialog(input.toLong(),"Conversion To Binary", input.toLong().toString(2))
-        }
-        btnOctal.setOnClickListener {
-            if(!inputOK()) return@setOnClickListener
-            showResultDialog(input.toLong(),"Conversion To Octal",input.toLong().toString(8))
-        }
-        btnHexa.setOnClickListener {
-            if(!inputOK()) return@setOnClickListener
-            showResultDialog(input.toLong(),"Conversion To Hexadecimal",input.toLong().toString(16))
-        }
+        btnBinary.setOnClickListener { doIt("Conversion To Binary") {getBinary()} }
+        btnOctal.setOnClickListener { doIt("Conversion To Octal") {getOctal()} }
+        btnHexa.setOnClickListener { doIt("Conversion To Hexadecimal"){getHexa()} }
 
         // manipulations / calculations //
-        btnReverse.setOnClickListener {
-            if(!inputOK()) return@setOnClickListener
-            showResultDialog(input.toLong(),"Reverse Digits Order", getReversedDigits())
-        }
-        btnDivisors.setOnClickListener {
-            if(!inputOK()) return@setOnClickListener
-            showResultDialog(input.toLong(),"Find Proper Divisors", getDivisors())
-        }
-        btnSum.setOnClickListener {
-            if(!inputOK()) return@setOnClickListener
-            showResultDialog(input.toLong(),"Calculate Sum of Digits", calcDigitSum())
-        }
+        btnReverse.setOnClickListener { doIt("Reverse Digits Order"){getReversedDigits()} }
+        btnDivisors.setOnClickListener { doIt("Find Proper Divisors"){getDivisors()} }
+        btnSum.setOnClickListener { doIt("Calculate Sum of Digits"){calcDigitSum()} }
 
         // convert to text //
         btnDigByDigReading.setOnClickListener {  }
@@ -59,13 +41,21 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+
 /////////////////////////////////   general utility functions ////////////////////////////////////////////////////
 
-    private fun showResultDialog(input: Long, oprName: String, result:String) {
+    private fun doIt(oprName: String, result:()->String) {
+        if (inputOK()) showResultDialog(input.toLong(),oprName,result)
+    }
+
+    private fun showResultDialog(input: Long, oprName: String, result:()->String) {
+
+        val rrr = result.invoke() // running lambda just now, after input was given in inputOK() !! //
+
         val res = AlertDialog.Builder(this@MainActivity)
             .setTitle("Result Window!")
             .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
-            .setMessage("Input: $input \n\nOperation: $oprName \n\nResult: $result")
+            .setMessage("Input: $input \n\nOperation: $oprName \n\nResult: $rrr")
             .create()
         res.setCanceledOnTouchOutside(false)
         res.show()
@@ -92,6 +82,12 @@ class MainActivity : AppCompatActivity() {
         info.show()
     }
 
+
+/////////////////////////////////   base conversion  functions  /////////////////////////////////////////////////
+
+    private fun getBinary() = input.toLong().toString(2)
+    private fun getOctal() = input.toLong().toString(8)
+    private fun getHexa() = input.toLong().toString(16)
 
 /////////////////////////////////   manipulations / calculations  functions  /////////////////////////////////////
 
@@ -135,4 +131,6 @@ class MainActivity : AppCompatActivity() {
         while (tmp>0) { sum += (tmp%10).toInt(); tmp/=10 }
         return sum.toString()
     }
+
+/////////////////////////////////   convert to text functions  ///////////////////////////////////////////////////
 }
