@@ -28,8 +28,6 @@
 
     </LinearLayout>
 
-    <LinearLayout android:layout_width="match_parent" android:layout_height="2dp"
-    android:background="#ffffff"/>
 
 
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
@@ -47,8 +45,8 @@
 
 
             <ImageButton
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:padding="10dp"
                     android:layout_below="@id/txtTitle1"
                     android:layout_marginTop="10dp"
@@ -59,8 +57,8 @@
                     android:scaleType="fitCenter"
                     android:id="@+id/btnBinary"/>
             <ImageButton
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:padding="10dp"
                     android:layout_below="@id/txtTitle1"
                     android:layout_marginTop="10dp"
@@ -70,8 +68,8 @@
                     android:scaleType="fitCenter"
                     android:id="@+id/btnOctal"/>
             <ImageButton
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:padding="10dp"
                     android:layout_below="@id/txtTitle1"
                     android:layout_marginTop="10dp"
@@ -83,17 +81,17 @@
                     android:id="@+id/btnHexa"/>
 
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="binary" android:layout_below="@id/btnBinary"
+            android:text="binary" android:layout_below="@id/btnBinary" android:textSize="14sp"
             android:layout_alignStart="@id/btnBinary" android:layout_alignEnd="@id/btnBinary"
             android:gravity="center"  android:textColor="#000000"
             android:layout_marginTop="5dp"/>
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-             android:text="octal" android:layout_below="@id/btnOctal"
+             android:text="octal" android:layout_below="@id/btnOctal" android:textSize="14sp"
              android:layout_alignStart="@id/btnOctal" android:layout_alignEnd="@id/btnOctal"
              android:gravity="center" android:textColor="#000000"
              android:layout_marginTop="5dp"/>
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-             android:text="hexadecimal" android:layout_below="@id/btnHexa"
+             android:text="hexadecimal" android:layout_below="@id/btnHexa" android:textSize="14sp"
              android:layout_alignStart="@id/btnHexa" android:layout_alignEnd="@id/btnHexa"
              android:gravity="center"  android:textColor="#000000"
              android:layout_marginTop="5dp"/>
@@ -110,8 +108,8 @@
 
 
             <ImageButton
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:padding="5dp"
                     android:layout_below="@id/txtTitle2"
                     android:layout_marginTop="10dp"
@@ -122,8 +120,8 @@
                     android:scaleType="fitCenter"
                     android:id="@+id/btnReverse"/>
             <ImageButton
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:padding="10dp"
                     android:layout_below="@id/txtTitle2"
                     android:layout_marginTop="10dp"
@@ -133,8 +131,8 @@
                     android:scaleType="fitCenter"
                     android:id="@+id/btnDivisors"/>
             <ImageButton
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:padding="10dp"
                     android:layout_below="@id/txtTitle2"
                     android:layout_marginTop="10dp"
@@ -146,21 +144,21 @@
                     android:id="@+id/btnSum"/>
 
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:text="Reverse Digits" android:layout_below="@id/btnReverse"
-                      android:layout_alignStart="@id/btnReverse"
+                      android:text="Reverse" android:layout_below="@id/btnReverse"
+                      android:layout_alignStart="@id/btnReverse"  android:textSize="14sp"
                       android:layout_alignEnd="@id/btnReverse"
                       android:gravity="center" android:textColor="#000000"
                       android:layout_marginTop="5dp"/>
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:text="Proper Divisors" android:layout_below="@id/btnDivisors"
-                      android:layout_alignStart="@id/btnDivisors"
+                      android:text="Divisors" android:layout_below="@id/btnDivisors"
+                      android:layout_alignStart="@id/btnDivisors" android:textSize="14sp"
                       android:layout_alignEnd="@id/btnDivisors"
                       android:gravity="center" android:textColor="#000000"
                       android:layout_marginTop="5dp"/>
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:text="Digits Sum" android:layout_below="@id/btnSum"
+                      android:text="Sum" android:layout_below="@id/btnSum"
                       android:layout_alignStart="@id/btnSum" android:layout_alignEnd="@id/btnSum"
-                      android:gravity="center" android:textColor="#000000"
+                      android:gravity="center" android:textColor="#000000" android:textSize="14sp"
                       android:layout_marginTop="5dp"/>
 
         </RelativeLayout>
@@ -185,7 +183,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_alignStart="@id/txtTitle3"
                     android:layout_alignEnd="@id/btnInfo"
-                    android:layout_marginEnd="100dp"
+                    android:layout_marginEnd="125dp"
                     android:text="digit by digit reading"
                     android:textAllCaps="false"
                     android:padding="10dp"
@@ -222,6 +220,9 @@
                     android:scaleType="fitXY"
                     app:maxImageSize="56dp"
                     android:tint="#FF5722"
+                    app:borderWidth="1dp"
+                    android:elevation="0dp"
+                    app:elevation="0dp"
                     android:backgroundTint="#000000" />
         </RelativeLayout>
 

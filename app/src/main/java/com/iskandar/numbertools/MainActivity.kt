@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
         val res = AlertDialog.Builder(this@MainActivity)
             .setTitle("Result Window!")
             .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
-            .setMessage("Original Number: $input \n\nOperation: $oprName \n\nResult: $result")
+            .setMessage("Input: $input \n\nOperation: $oprName \n\nResult: $result")
             .create()
         res.setCanceledOnTouchOutside(false)
         res.show()
