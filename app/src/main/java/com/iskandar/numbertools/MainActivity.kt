@@ -89,7 +89,7 @@ class MainActivity : AppCompatActivity() {
             .setTitle("Number Tools")
             .setMessage("by Iskandar Mazzawi \u00a9")
             .setPositiveButton("OK") { dialog, _ -> dialog.dismiss()  }
-            .setNegativeButton("Exit App.") { _,_ -> finish() }
+            .setNeutralButton("Exit App.") { _,_ -> finish() }
             .setIcon(R.drawable.ic_info_orange)
             .create()
         info.setCanceledOnTouchOutside(false)
