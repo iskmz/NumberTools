@@ -11,4 +11,4 @@ Manipulations: Reverse digits, find proper divisors, sum of digits
 convert to text: either digit by digit reading , or natural number reading !
 
 
-<img src="https://user-images.githubusercontent.com/48130426/62737519-a921a480-ba38-11e9-8dcf-73769a79bdc6.png" width=300 height=500/>&emsp;<img src="https://user-images.githubusercontent.com/48130426/62737521-a921a480-ba38-11e9-8e2f-5e88cea2f8f7.png" width=300 height=500/>&emsp;<img src="https://user-images.githubusercontent.com/48130426/62737522-a921a480-ba38-11e9-8f34-4b92fd15d72d.png" width=300 height=500/>&emsp;
+<img src="https://user-images.githubusercontent.com/48130426/62763648-c3896b80-ba94-11e9-86eb-bc70242fc40e.png" width=300 height=500/>&emsp;<img src="https://user-images.githubusercontent.com/48130426/62763649-c3896b80-ba94-11e9-940b-a66761f89fea.png" width=300 height=500/>&emsp;<img src="https://user-images.githubusercontent.com/48130426/62763650-c4220200-ba94-11e9-9d16-28a5d7e24359.png" width=300 height=500/>&emsp;<img src="https://user-images.githubusercontent.com/48130426/62763651-c4220200-ba94-11e9-8c8d-f820693e047d.png" width=300 height=500/>&emsp;
