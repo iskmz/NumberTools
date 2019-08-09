@@ -60,7 +60,8 @@ class MainActivity : AppCompatActivity() {
         val res = AlertDialog.Builder(this@MainActivity)
             .setTitle("Result Window!")
             .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
-            .setNeutralButton("COPY"){ _,_ -> copyToClipboard(msg) }
+            .setNeutralButton("COPY ALL"){ _,_ -> copyToClipboard(msg) }
+            .setNegativeButton("COPY RESULT") { _,_ -> copyToClipboard(rrr)}
             .setMessage(msg)
             .create()
         res.setCanceledOnTouchOutside(false)
@@ -120,7 +121,7 @@ class MainActivity : AppCompatActivity() {
 
         var divListStart="1"
         var divListEnd=""
-        var checkLimit = sqrt(tmp.toDouble())
+        val checkLimit = sqrt(tmp.toDouble())
 
         for(i in 2..checkLimit.toLong())
         {
@@ -169,13 +170,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getNumPlacementTag(place:Int) = when(place) {
-        0 -> ""
-        1 -> "thousand "
-        2 -> "million "
-        3 -> "billion "
-        4 -> "trillion "
-        5 -> "quadrillion"
-        else -> ""
+        0 -> ""; 1 -> "thousand "; 2 -> "million "; 3 -> "billion "
+        4 -> "trillion "; 5 -> "quadrillion"; else -> ""
         /*
             // the following is not included since limit is 18 digits (~ close to LONG.MAX_VALUE) //
                 case 6: tag="quintillion"; break;
@@ -224,32 +220,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getTeenNumName(digit:Int) = when(digit) {
-        0->"ten"
-        1->"eleven" // dealt with in another method
-        2->"twelve"
-        3->"thirteen"
-        4->"fourteen"
-        5->"fifteen"
-        6->"sixteen"
-        7->"seventeen"
-        8->"eighteen"
-        9->"nineteen"
-        else -> ""
-    }
+        0->"ten"; 1->"eleven"; 2->"twelve"; 3->"thirteen"
+        4->"fourteen"; 5->"fifteen"; 6->"sixteen"; 7->"seventeen"
+        8->"eighteen"; 9->"nineteen"; else -> "" }
 
     private fun getTensDigitName(digit:Int):String = when(digit){
         0->""// dealt with in another method
         1->"" // dealt with in another method
-        2->"twenty"
-        3->"thirty"
-        4->"forty"
-        5->"fifty"
-        6->"sixty"
-        7->"seventy"
-        8->"eighty"
-        9->"ninety"
-        else ->""
-    }
+        2->"twenty"; 3->"thirty"; 4->"forty"; 5->"fifty"; 6->"sixty"
+        7->"seventy"; 8->"eighty"; 9->"ninety"; else ->"" }
 
     private fun getNumArr(num:Long):Array<Int> {
         val numArray:Array<Int> = Array<Int>(getNumArrLength(num)){0}
@@ -300,19 +279,9 @@ class MainActivity : AppCompatActivity() {
         else->(str[0]).toString().toUpperCase()+str.substring(1)
     }
 
-    private fun getDigitName(digit:Int) = when(digit){
-        0->"zero"
-        1->"one"
-        2->"two"
-        3->"three"
-        4->"four"
-        5->"five"
-        6->"six"
-        7->"seven"
-        8->"eight"
-        9->"nine"
-        else->""
-    }
+    private fun getDigitName(digit:Int) = when(digit){ 0->"zero"; 1->"one"
+        2->"two"; 3->"three"; 4->"four"; 5->"five"; 6->"six"; 7->"seven"
+        8->"eight"; 9->"nine"; else->"" }
 
     private fun reverseNum(num:Long):Long{
         var rev:Long=0
