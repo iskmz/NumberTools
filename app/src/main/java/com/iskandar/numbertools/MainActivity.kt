@@ -7,6 +7,14 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.math.pow
 import kotlin.math.sqrt
+import android.R.attr.label
+import android.content.ClipData
+import android.content.ClipData.newPlainText
+import android.content.ClipboardManager
+import android.content.Context
+import android.content.Context.CLIPBOARD_SERVICE
+
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -47,14 +55,23 @@ class MainActivity : AppCompatActivity() {
     private fun showResultDialog(input: String, oprName: String, result:()->String) {
 
         val rrr = result.invoke() // running lambda just now, after input was given in inputOK() !! //
+        val msg = "Input: $input \n\nOperation: $oprName \n\nResult: $rrr"
 
         val res = AlertDialog.Builder(this@MainActivity)
             .setTitle("Result Window!")
             .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
-            .setMessage("Input: $input \n\nOperation: $oprName \n\nResult: $rrr")
+            .setNeutralButton("COPY"){ _,_ -> copyToClipboard(msg) }
+            .setMessage(msg)
             .create()
         res.setCanceledOnTouchOutside(false)
         res.show()
+    }
+
+    private fun copyToClipboard(msg: String) {
+        val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        val clip = newPlainText("",msg)
+        clipboard.primaryClip = clip
+        Toast.makeText(this@MainActivity,"Copied to clipboard!",Toast.LENGTH_LONG).show()
     }
 
     private fun inputOK(): Boolean {
